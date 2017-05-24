@@ -1,7 +1,7 @@
 FROM ubuntu
 
 RUN apt-get update
-RUN apt-get install -y python-pip golang git curl
+RUN apt-get install -y python-pip golang git curl jq uuid-runtime vim
 RUN pip install --upgrade awscli
 ENV GOPATH=/golang
 RUN curl -LO `curl -s https://api.github.com/repos/kubernetes/kops/releases|grep browser_download_url|grep linux| head -n 1 | cut -d '"' -f 4`
